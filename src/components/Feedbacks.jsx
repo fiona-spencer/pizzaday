@@ -15,7 +15,7 @@ const FeedbackCard = ({
 }) => (
   <motion.div
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
-    className="bg-black-200 p-10 rounded-3xl xs:w-[320px] w-full"
+    className="bg-red-500 p-10 squared-3xl xs:w-[320px] w-full"
   >
     <p className="text-white font-black text-[48px]">"</p>
 
@@ -35,7 +35,7 @@ const FeedbackCard = ({
         <img
           src={image}
           alt={`feedback_by-${name}`}
-          className="w-10 h-10 rounded-full object-cover"
+          className="w-10 h-10 squared-full object-cover"
         />
       </div>
     </div>
@@ -44,10 +44,8 @@ const FeedbackCard = ({
 
 const Feedbacks = () => {
   return (
-    <div className="mt-12 bg-black-100 rounded-[20px]">
-      <div
-        className={`${styles.padding} bg-tertiary rounded-2xl min-h-[300px]`}
-      >
+    <div className="mt-12 bg-white-100 squared-[20px]">
+      <div className={`${styles.padding} bg-red-900 squared-2xl min-h-[300px]`}>
         <motion.div variants={textVariant()}>
           <p className={styles.sectionSubText}>most recent</p>
           <h2 className={styles.sectionHeadText}>REVIEWS</h2>
@@ -62,4 +60,4 @@ const Feedbacks = () => {
   );
 };
 
-export default SectionWrapper(Feedbacks, "");
+export default SectionWrapper(Feedbacks, "feedback");

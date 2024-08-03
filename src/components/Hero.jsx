@@ -1,44 +1,46 @@
 import { motion } from "framer-motion";
-import { styles } from "../styles";
-import { ComputersCanvas } from "./canvas";
+import { styles } from "../styles"; // Ensure this is used if needed
+import { ComputersCanvas } from "./canvas"; // Remove if not used
 
 const Hero = () => {
   return (
     <section className="relative w-full h-screen mx-auto">
-      <div
-        className={`${styles.paddingX} absolute
-      insert-0 top-[120px] max-w-7xl mx-auto flex
-      flex-row items-start gap-5`}
-      >
-        <div className="flex flex-col justify-center items-center mt-5"></div>
+      <div className="relative w-full h-full flex justify-center items-center">
+        {/* Image with relative positioning to act as a container */}
+        <img
+          src="src/assets/hero-background.avif"
+          alt="Hero background"
+          className="w-full h-full object-cover" // Ensures the image covers the container
+        />
 
-        <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            <span className="text=[#915eff]"></span>
-          </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I develop 3D visuals, user interfaces{" "}
-            <br className="sm:block hidden" />, and web applications
-          </p>
-        </div>
-      </div>
+        {/* Animated overlay */}
+        <a
+          href="#about"
+          className="absolute flex flex-col items-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        >
+          <div className="pt-[100px] pb-[10px] items-center flex">
+            <img
+              src="src/assets/hero-picture.webp"
+              alt="Hero picture"
+              className="w-auto h-auto " // Adjust size and margin as needed
+            />
+            <img
+              src="src/assets/hero-pizza.webp"
+              alt="Hero picture"
+              className="w-[2000px] h-auto " // Adjust size and margin as needed
+            />
+          </div>
 
-      <img src="" />
-
-      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
-        <a href="#about">
-          <div className="w-[35px] h-[64px] rounded-3xl border-4 border-red-600 flex justify-center items-start p-2">
-            <motion.dev
-              animate={{
-                y: [0, 24, 0],
-              }}
+          <div className="w-[35px] h-[64px] squared-3xl border-4 border-red-600 flex justify-center items-start">
+            <motion.div
+              animate={{ y: [0, 24, 0] }}
               transition={{
                 duration: 1.5,
                 repeat: Infinity,
                 repeatType: "loop",
               }}
-              className="w-3 h-3 rounded-full bg-red-600 mb-1"
-            ></motion.dev>
+              className="w-3 h-3 squared-full bg-secondary mb-1"
+            />
           </div>
         </a>
       </div>

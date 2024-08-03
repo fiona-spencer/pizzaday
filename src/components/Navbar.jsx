@@ -9,6 +9,7 @@ import letterlogo from "../assets/pizzaday-logo.avif";
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+
   return (
     <nav
       className={`
@@ -24,50 +25,56 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <p className="text-red-600 text-[50px] font-bold cursor-pointer flex">
-            HOORAY<span className="sm:block hidden">&nbsp;FOR PIZZA DAY</span>
+          <p className="text-red-600 text-[30px] md:text-[50px] font-bold cursor-pointer">
+            HOORAY
+            <span className="hidden md:inline">&nbsp;FOR PIZZA DAY &nbsp;</span>
           </p>
-          <img src={letterlogo} alt="logo" style={{ width: "100px" }} />
+          <img
+            src={letterlogo}
+            alt="Pizza Day Logo"
+            className="w-[80px] md:w-[100px]"
+          />
         </Link>
-        <ul className="list-none hidden sm:flex flex-row gap-10">
-          {navLinks.map((Link) => (
-            <li
-              key={Link.id}
-              className={`${
-                active === Link.title ? "text-red-600 " : "text-red-600"
-              } hover:text-red-300  text-[30] font-bold cursor-pointer`}
-              onClick={() => setActive(link.title)}
-            >
-              <a href={`#${Link.id}`}>{Link.title}</a>
-            </li>
-          ))}
-        </ul>
-        <div className="sm:hidden flex flex-1 justify-end items-center">
+        <div className="hidden md:flex flex-grow justify-center items-center">
+          <ul className="list-none flex flex-row gap-10">
+            {navLinks.map((navItem) => (
+              <li
+                key={navItem.id}
+                className={`${
+                  active === navItem.title ? "text-red-400" : "text-red-400"
+                } hover:text-red-300 text-[18px] md:text-[26px] font-bold cursor-pointer hover:underline`}
+                onClick={() => setActive(navItem.title)}
+              >
+                <a href={`#${navItem.id}`}>{navItem.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="md:hidden flex items-center">
           <img
             src={toggle ? close : menu}
-            alt="menu"
+            alt="Menu"
             className="w-[28px] h-[28px] object-contain cursor-pointer"
             onClick={() => setToggle(!toggle)}
           />
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute
-                  top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            } p-6 bg-black absolute top-16 right-4 w-[200px] min-w-[140px] rounded-lg`}
           >
-            <ul className="list-none flex justify-end items-start flex-col gap-4">
-              {navLinks.map((Link) => (
+            <ul className="list-none flex flex-col gap-4">
+              {navLinks.map((navItem) => (
                 <li
-                  key={Link.id}
+                  key={navItem.id}
                   className={`${
-                    active === Link.title ? "text-white" : "text-secondary"
+                    active === navItem.title ? "text-white" : "text-gray-400"
                   } font-poppins font-medium cursor-pointer text-[16px]`}
                   onClick={() => {
                     setToggle(!toggle);
-                    setActive(Link.title);
+                    setActive(navItem.title);
                   }}
                 >
-                  <a href={`#${Link.id}`}>{Link.title}</a>
+                  <a href={`#${navItem.id}`}>{navItem.title}</a>
                 </li>
               ))}
             </ul>
