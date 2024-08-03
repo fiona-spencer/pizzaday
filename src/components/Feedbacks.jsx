@@ -45,7 +45,9 @@ const FeedbackCard = ({
 const Feedbacks = () => {
   return (
     <div className="mt-12 bg-white-100 squared-[20px]">
-      <div className={`${styles.padding} bg-red-900 squared-2xl min-h-[300px]`}>
+      <div
+        className={`${styles.padding} bg-slate-600 squared-2xl min-h-[300px]`}
+      >
         <motion.div variants={textVariant()}>
           <p className={styles.sectionSubText}>most recent</p>
           <h2 className={styles.sectionHeadText}>REVIEWS</h2>

@@ -3,6 +3,7 @@ import {
   BallCanvas,
   ComputersCanvas,
   StarsCanvas,
+  PizzaCanvas,
 } from "./canvas";
 import Hero from "./Hero";
 import Navbar from "./Navbar";
@@ -28,4 +29,5 @@ export {
   BallCanvas,
   ComputersCanvas,
   StarsCanvas,
+  PizzaCanvas,
 };

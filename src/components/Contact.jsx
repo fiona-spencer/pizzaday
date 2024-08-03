@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
+import { PizzaCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
@@ -66,11 +67,11 @@ const Contact = () => {
 
   return (
     <div
-      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
+      className={`xl:mt-10 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-black-100 p-8 squared-2xl"
+        className="flex-[0.75] border-dashed border-4 border-slate-600 p-8 squared-2xl"
       >
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
@@ -78,7 +79,7 @@ const Contact = () => {
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className="mt-12 flex flex-col gap-8"
+          className="mt-2 flex flex-col gap-7"
         >
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your Name</span>
@@ -88,7 +89,7 @@ const Contact = () => {
               value={form.name}
               onChange={handleChange}
               placeholder="What's your name?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white squared-lg outline-none border-none font-medium"
+              className="bg-slate-800 py-4 px-6 placeholder:text-secondary text-white squared-lg outline-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
@@ -99,7 +100,7 @@ const Contact = () => {
               value={form.email}
               onChange={handleChange}
               placeholder="What's your web address?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white squared-lg outline-none border-none font-medium"
+              className="bg-slate-800 py-4 px-6 placeholder:text-secondary text-white squared-lg outline-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
@@ -110,14 +111,14 @@ const Contact = () => {
               value={form.message}
               onChange={handleChange}
               placeholder="What you want to say?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white squared-lg outline-none border-none font-medium"
+              className="bg-slate-800 py-4 px-6 placeholder:text-secondary text-white squared-lg outline-none border-none font-medium"
             />
           </label>
 
           <button
             href="https://google.com"
             type="submit"
-            className="bg-tertiary py-3 px-8 squared-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
+            className="bg-slate-800 py-3 px-8 squared-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
           >
             {loading ? "Sending..." : "Send"}
           </button>
@@ -128,7 +129,7 @@ const Contact = () => {
         variants={slideIn("right", "tween", 0.2, 1)}
         className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
       >
-        <EarthCanvas />
+        <PizzaCanvas />
       </motion.div>
     </div>
   );

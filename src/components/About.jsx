@@ -6,30 +6,32 @@ import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
+import Map from "./Map";
 
 const ServiceCard = ({ index, title, icon }) => (
-  <Tilt className="xs:w-[250px] w-full">
+  <Tilt
+    options={{
+      max: 45,
+      scale: 1.05, // Slightly larger tilt effect
+      speed: 450,
+    }}
+    className="w-full md:w-[400px] lg:w-[3000px] p-4" // Adjust width and padding
+  >
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className="w-full green-pink-gradient p-[1px] squared-[20px] shadow-card"
+      className="w-full border border-gray-300 squared-lg shadow-lg"
     >
-      <div
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className="bg-white squared-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
-      >
-        <img
-          src={icon}
-          alt="web-development"
-          className="w-16 h-16 object-contain"
-        />
-
-        <h3 className="text-white text-[20px] font-bold text-center">
+      <div className="bg-white squared-lg p-6 flex flex-col items-center max-h-[250px]">
+        {" "}
+        {/* Increase min-height */}
+        {/* Ensure the title is not empty */}
+        <h1 className="text-black text-lg md:text-xl font-semibold mb-4">
           {title}
-        </h3>
+        </h1>
+        {/* Map container */}
+        <div className="w-full h-[300px] md:h-[400px] lg:h-[500px]">
+          <Map />
+        </div>
       </div>
     </motion.div>
   </Tilt>
@@ -45,13 +47,15 @@ const About = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-black text-[17px] max-w-3xl leading-[30px]"
+        className="mt-4 text-black text-[17px] max-w-5xl leading-[30px]"
       >
-        I'm a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Node.js, and
-        Three.js. I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Let's work together to bring your ideas to life!
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">

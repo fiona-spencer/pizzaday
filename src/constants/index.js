@@ -42,7 +42,15 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
+    title: "Location",
+    icon: web,
+  },
+  {
+    title: "Toronto Life",
+    icon: web,
+  },
+  {
+    title: "Global News",
     icon: web,
   },
 ];
@@ -199,7 +207,7 @@ const menus = [
         color: "green-text-gradient",
       },
     ],
-    image: carrent,
+    image: heropizza,
     source_code_link:
       "https://www.doordash.com/store/hooray-for-pizza-day-toronto-27973800/?utm_campaign=gpa",
   },
@@ -230,7 +238,7 @@ const menus = [
         color: "green-text-gradient",
       },
     ],
-    image: tripguide,
+    image: heropizza,
     source_code_link: "https://github.com/",
   },
 ];
